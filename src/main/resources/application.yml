@@ -1,0 +1,13 @@
+logging:
+  level:
+    root: info
+spring:
+  application:
+    name: otel-demo
+otel:
+  exporter:
+    otlp:
+      endpoint: http://192.168.170.75:4317
+      protocol: grpc
+  resource:
+    attributes: service.name=otel-demo
