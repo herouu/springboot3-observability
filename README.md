@@ -12,6 +12,7 @@
 
 ### 准备工作，运行LGTM
 
+```shell
 docker run \
 --name lgtm \
 -p 3000:3000 \
@@ -24,11 +25,13 @@ docker run \
 -v $PWD/container/loki:/loki \
 -e GF_PATHS_DATA=/data/grafana \
 docker.io/grafana/otel-lgtm:latest
+```
+
 
 ### springboot项目集成的两种方式
 
 * 使用javaagent方式  
-  java -javaagent:path/to/opentelemetry-javaagent.jar -Dotel.service.name=your-service-name -jar myapp.jar
+  `java -javaagent:path/to/opentelemetry-javaagent.jar -Dotel.service.name=your-service-name -jar myapp.jar`
 * 使用sdk方式  
   参考该项目代码
 
